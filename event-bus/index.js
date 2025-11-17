@@ -18,7 +18,7 @@ app.post("/events", async (req, res) => {
     try {
       await axios.post(url, event);
     } catch (err) {
-      console.log(`❌ Error sending event to ${url}`);
+      console.log(`Error sending event to ${url}`);
       console.log(err.message);
     }
   }
