@@ -8,21 +8,21 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const comentsByPostId = {};
+const commentsByPostId = {};
 
 app.get("/posts/:id/comments", (req, res) => {
-  res.send(comentsByPostId[req.params.id] || []);
+  res.send(commentsByPostId[req.params.id] || []);
 });
 
 app.post("/posts/:id/comments", async (req, res) => {
   const commentId = randomBytes(4).toString("hex");
   const { content } = req.body;
 
-  const comments = comentsByPostId[req.params.id] || [];
+  const comments = commentsByPostId[req.params.id] || [];
 
   comments.push({ id: commentId, content, status: "Pending" });
 
-  comentsByPostId[req.params.id] = comments;
+  commentsByPostId[req.params.id] = comments;
 
   await axios.post("http://localhost:4005/events", {
     type: "CommentCreated",
@@ -61,6 +61,7 @@ app.post("/events", async (req, res) => {
       },
     });
   }
+
   res.send({});
 });
 
