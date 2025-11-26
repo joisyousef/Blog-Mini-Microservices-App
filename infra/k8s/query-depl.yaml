@@ -21,7 +21,7 @@ kind: Service
 metadata:
   name: query-srv
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: query
   ports:
