@@ -21,7 +21,7 @@ kind: Service
 metadata:
   name: comments-srv
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: comments
   ports:
