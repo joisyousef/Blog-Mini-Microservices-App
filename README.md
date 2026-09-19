@@ -6,7 +6,7 @@ The application separates write operations (creating posts and comments) from re
 
 ## Architecture
 
-![System Architecture](./diagram.png)
+<img width="4869" height="6246" alt="diagram" src="https://github.com/user-attachments/assets/d9aeaa9b-b0d7-485e-b1ca-ba5df9e81b7d" />
 
 ### High-level flow
 
@@ -320,5 +320,3 @@ For example:
 The trade-off is additional complexity: event-driven systems introduce concerns such as asynchronous processing, event ordering, duplicate events, consistency between read models, and failure/retry handling.
 
 ---
-
-<img width="4869" height="6246" alt="diagram" src="https://github.com/user-attachments/assets/d9aeaa9b-b0d7-485e-b1ca-ba5df9e81b7d" /><img width="4869" height="6246" alt="diagram" src="https://github.com/user-attachments/assets/6d68ab0f-2010-4053-91fd-c8296defac42" />
